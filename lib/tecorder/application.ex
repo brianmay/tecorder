@@ -11,7 +11,7 @@ defmodule Tecorder.Application do
       # Start the Ecto repository
       supervisor(Tecorder.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(TecorderWeb.Endpoint, []),
+      supervisor(TecorderWeb.Endpoint, [])
       # Start your own worker by calling: Tecorder.Worker.start_link(arg1, arg2, arg3)
       # worker(Tecorder.Worker, [arg1, arg2, arg3]),
     ]

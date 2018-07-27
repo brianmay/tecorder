@@ -1,0 +1,5 @@
+<h2>New Charge</h2>
+
+<%= render "form.html", Map.put(assigns, :action, charge_path(@conn, :create)) %>
+
+<span><%= link "Back", to: charge_path(@conn, :index) %></span>

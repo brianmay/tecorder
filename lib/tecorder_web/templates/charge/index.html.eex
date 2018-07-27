@@ -1,0 +1,44 @@
+<h2>Listing Charges</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>Start time</th>
+      <th>Start distance</th>
+      <th>Stop Date</th>
+      <th>Stop time</th>
+      <th>Stop distance</th>
+      <th>Current</th>
+      <th>Added distance</th>
+      <th>Duration</th>
+      <th>Distance/Hour</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for charge <- @charges do %>
+    <tr>
+      <td><%= to_date(charge.start_date_time) %></td>
+      <td><%= to_time(charge.start_date_time) %></td>
+      <td><%= charge.start_distance %></td>
+      <td><%= to_date(charge.stop_date_time) %></td>
+      <td><%= to_time(charge.stop_date_time) %></td>
+      <td><%= charge.stop_distance %></td>
+      <td><%= charge.current %></td>
+      <td><%= int_diff(charge.stop_distance, charge.start_distance) %></td>
+      <td><%= time_diff(charge.stop_date_time, charge.start_date_time) %></td>
+      <td><%= charge_rate(charge) %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: charge_path(@conn, :show, charge), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: charge_path(@conn, :edit, charge), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: charge_path(@conn, :delete, charge), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Charge", to: charge_path(@conn, :new) %></span>

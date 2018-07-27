@@ -1,0 +1,40 @@
+<h2>Show Entry</h2>
+
+<ul>
+
+  <li>
+    <strong>Car:</strong>
+    <%= @entry.car.registration %>
+  </li>
+
+
+  <li>
+    <strong>Date time:</strong>
+    <%= to_date(@entry.date_time) %>
+    <%= to_time(@entry.date_time) %>
+  </li>
+
+  <li>
+    <strong>Distance:</strong>
+    <%= @entry.distance %>
+  </li>
+
+  <li>
+    <strong>Energy:</strong>
+    <%= @entry.energy %>
+  </li>
+
+  <li>
+    <strong>Battery remaining:</strong>
+    <%= @entry.battery_remaining %>
+  </li>
+
+  <li>
+    <strong>Temperature:</strong>
+    <%= @entry.temperature %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: entry_path(@conn, :edit, @entry) %></span>
+<span><%= link "Back", to: entry_path(@conn, :index) %></span>

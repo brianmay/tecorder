@@ -1,0 +1,23 @@
+<h2>Show Car</h2>
+
+<ul>
+
+  <li>
+    <strong>Registration:</strong>
+    <%= @car.registration %>
+  </li>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @car.model %>
+  </li>
+
+  <li>
+    <strong>Maximum Charge:</strong>
+    <%= @car.battery_maximum %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: car_path(@conn, :edit, @car) %></span>
+<span><%= link "Back", to: car_path(@conn, :index) %></span>

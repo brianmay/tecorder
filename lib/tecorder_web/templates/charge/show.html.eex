@@ -1,0 +1,28 @@
+<h2>Show Charge</h2>
+
+<ul>
+
+  <li>
+    <strong>Start date time:</strong>
+    <%= @charge.start_date_time %>
+  </li>
+
+  <li>
+    <strong>Start distance:</strong>
+    <%= @charge.start_distance %>
+  </li>
+
+  <li>
+    <strong>Stop date time:</strong>
+    <%= @charge.stop_date_time %>
+  </li>
+
+  <li>
+    <strong>Stop distance:</strong>
+    <%= @charge.stop_distance %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: charge_path(@conn, :edit, @charge) %></span>
+<span><%= link "Back", to: charge_path(@conn, :index) %></span>
