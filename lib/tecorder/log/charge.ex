@@ -1,6 +1,7 @@
 defmodule Tecorder.Log.Charge do
   use Ecto.Schema
   import Ecto.Changeset
+  @timestamps_opts [type: :utc_datetime, usec: true]
 
   schema "charges" do
     field(:start_date_time, :utc_datetime)

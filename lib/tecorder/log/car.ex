@@ -1,6 +1,7 @@
 defmodule Tecorder.Log.Car do
   use Ecto.Schema
   import Ecto.Changeset
+  @timestamps_opts [type: :utc_datetime, usec: true]
 
   schema "cars" do
     field(:model, :string)

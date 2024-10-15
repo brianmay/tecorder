@@ -1,6 +1,7 @@
 defmodule Tecorder.Log.Entry do
   use Ecto.Schema
   import Ecto.Changeset
+  @timestamps_opts [type: :utc_datetime, usec: true]
 
   schema "entries" do
     field(:battery_remaining, :integer)
